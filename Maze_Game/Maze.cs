@@ -76,7 +76,12 @@ namespace Maze_Game
             {
                 for (int X =0; X< _Width; X++)
                 {
-                    if (X == 0 || Y == 0 || X == _Width - 1 || Y == _Heigth - 1)
+                    if (X==39  && Y==19)
+                    {
+                        _MazeArray[X, Y] = new EmptySpaces();
+                        Console.Write(_MazeArray[X, Y].Icon);
+                    }
+                  else  if (X == 0 || Y == 0 || X == _Width - 1 || Y == _Heigth - 1)
                     {
                         _MazeArray[X, Y] = new Wall();
                         Console.Write(_MazeArray[X, Y].Icon);
@@ -86,9 +91,15 @@ namespace Maze_Game
                         Console.Write(_player.Icon);
 
                     }
-                    else if()
+                    else if(X % 3 == 0 && Y % 3 ==0)
                     {
-                    
+                        _MazeArray[X, Y] = new Wall();
+                        Console.Write(_MazeArray[X, Y].Icon);
+                    }
+                   else if(X % 5 == 0 && Y % 5 ==0)
+                    {
+                        _MazeArray[X, Y] = new Wall();
+                        Console.Write(_MazeArray[X, Y].Icon);
                     }
                     else
                     {
